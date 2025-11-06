@@ -1,0 +1,406 @@
+openapi: 3.0.3
+info:
+  title: Deck of Cards API
+  version: "1.0.1"
+  description: |
+    A simple HTTP API to create, shuffle, draw, and manage piles from a virtual deck of playing cards.
+    Supports single or multi-deck shoes, partial decks, optional jokers, and pile operations (add, draw, list, shuffle, return).
+  termsOfService: https://www.deckofcardsapi.com/
+  contact:
+    name: Deck of Cards (Chase Roberts)
+    url: https://github.com/crobertsbmw/deckofcards
+    email: hello@deckofcardsapi.com
+  license:
+    name: MIT
+    url: https://github.com/crobertsbmw/deckofcards/blob/master/LICENSE.txt
+
+externalDocs:
+  description: API homepage
+  url: https://www.deckofcardsapi.com/
+
+servers:
+  - url: https://www.deckofcardsapi.com/api
+    description: Production
+
+tags:
+  - name: Decks
+    description: Create and shuffle decks, including partial and multi-deck shoes.
+  - name: Draw
+    description: Draw cards from decks and piles; return cards to a deck.
+  - name: Piles
+    description: Create and manage piles (hands, discard, etc.) from a deck.
+  - name: Images
+    description: Static card-back / card-face image endpoints.
+
+paths:
+  /deck/new:
+    get:
+      tags: [Decks]
+      summary: Create a brand-new unshuffled deck
+      operationId: createUnshuffledDeck
+      description: |
+        Creates a new 52-card deck (optionally with jokers). Returns a `deck_id` for subsequent operations.
+      parameters:
+        - name: jokers_enabled
+          in: query
+          description: Include two Jokers in the deck.
+          required: false
+          schema: { type: boolean }
+      responses:
+        '200':
+          description: New deck metadata
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Deck'
+
+  /deck/new/shuffle:
+    get:
+      tags: [Decks]
+      summary: Create and shuffle a new deck (or partial deck)
+      operationId: createAndShuffleNewDeck
+      description: |
+        Creates a new deck and shuffles it. Supports multiple decks via `deck_count`, or a partial deck via `cards`.
+      parameters:
+        - name: deck_count
+          in: query
+          description: Number of decks to include (e.g., 6 for a blackjack shoe).
+          required: false
+          schema: { type: integer, minimum: 1, default: 1 }
+        - name: cards
+          in: query
+          description: |
+            Comma-separated list of card codes for a partial deck (e.g., `AS,2S,0D,KH`).
+            Values are `[A,2-9,0,J,Q,K]` + suit `[S,D,C,H]` (case-insensitive).
+          required: false
+          schema: { type: string }
+      responses:
+        '200':
+          description: Shuffled deck created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Deck'
+
+  /deck/{deck_id}/shuffle:
+    get:
+      tags: [Decks]
+      summary: Reshuffle a deck
+      operationId: reshuffleDeck
+      description: |
+        Reshuffles the deck. If `remaining=true`, only the main stack is reshuffled, leaving piles and drawn cards untouched.
+      parameters:
+        - $ref: '#/components/parameters/DeckId'
+        - name: remaining
+          in: query
+          description: Shuffle only the remaining main stack (do not recall from piles).
+          required: false
+          schema: { type: boolean }
+      responses:
+        '200':
+          description: Reshuffled deck
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Deck'
+
+  /deck/{deck_id}/draw:
+    get:
+      tags: [Draw]
+      summary: Draw cards from a deck
+      operationId: drawFromDeck
+      description: |
+        Draws cards from the specified deck. Use `count` to control how many.
+        Tip: replace `{deck_id}` with `new` to create & draw from a fresh shuffled deck in one call.
+      parameters:
+        - $ref: '#/components/parameters/DeckId'
+        - name: count
+          in: query
+          required: false
+          schema: { type: integer, minimum: 1, default: 1 }
+      responses:
+        '200':
+          description: Drawn cards payload
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DrawnCards'
+
+  /deck/{deck_id}/return:
+    get:
+      tags: [Draw]
+      summary: Return cards to the deck
+      operationId: returnCardsToDeck
+      description: |
+        Return previously drawn cards to the main deck so they can be reused.
+        If `cards` is omitted, all eligible drawn cards are returned.
+      parameters:
+        - $ref: '#/components/parameters/DeckId'
+        - name: cards
+          in: query
+          required: false
+          description: Comma-separated card codes to return (e.g., `AS,2S`).
+          schema: { type: string }
+      responses:
+        '200':
+          description: Return result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PileResult'
+
+  /deck/{deck_id}/pile/{pile_name}/add:
+    get:
+      tags: [Piles]
+      summary: Add cards to a pile
+      operationId: addCardsToPile
+      description: |
+        Adds one or more previously drawn cards to a named pile (created on the fly). Not supported with multi-deck shoes.
+      parameters:
+        - $ref: '#/components/parameters/DeckId'
+        - $ref: '#/components/parameters/PileName'
+        - name: cards
+          in: query
+          required: true
+          description: Comma-separated card codes to add to the pile.
+          schema: { type: string }
+      responses:
+        '200':
+          description: Pile update
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PileResult'
+
+  /deck/{deck_id}/pile/{pile_name}/shuffle:
+    get:
+      tags: [Piles]
+      summary: Shuffle a pile
+      operationId: shufflePile
+      description: Shuffle the specified pile. Not supported with multi-deck shoes.
+      parameters:
+        - $ref: '#/components/parameters/DeckId'
+        - $ref: '#/components/parameters/PileName'
+      responses:
+        '200':
+          description: Pile shuffled
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PileResult'
+
+  /deck/{deck_id}/pile/{pile_name}/list:
+    get:
+      tags: [Piles]
+      summary: List cards in a pile
+      operationId: listPile
+      description: Returns current contents of the pile and remaining counts.
+      parameters:
+        - $ref: '#/components/parameters/DeckId'
+        - $ref: '#/components/parameters/PileName'
+      responses:
+        '200':
+          description: Pile list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PileResult'
+
+  /deck/{deck_id}/pile/{pile_name}/draw:
+    get:
+      tags: [Piles]
+      summary: Draw cards from a pile
+      operationId: drawFromPile
+      description: |
+        Draw specific `cards` or draw by `count` from the top.  
+        Alternate endpoints are supported to draw from `/bottom` or `/random`.
+      parameters:
+        - $ref: '#/components/parameters/DeckId'
+        - $ref: '#/components/parameters/PileName'
+        - name: cards
+          in: query
+          required: false
+          description: Comma-separated card codes to draw from the pile.
+          schema: { type: string }
+        - name: count
+          in: query
+          required: false
+          description: Number of cards to draw if `cards` is not supplied.
+          schema: { type: integer, minimum: 1, default: 1 }
+      responses:
+        '200':
+          description: Drawn cards from pile
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DrawnCards'
+
+  /deck/{deck_id}/pile/{pile_name}/draw/bottom:
+    get:
+      tags: [Piles]
+      summary: Draw from the bottom of a pile
+      operationId: drawFromPileBottom
+      parameters:
+        - $ref: '#/components/parameters/DeckId'
+        - $ref: '#/components/parameters/PileName'
+        - name: count
+          in: query
+          required: false
+          schema: { type: integer, minimum: 1, default: 1 }
+      responses:
+        '200':
+          description: Drawn cards payload
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DrawnCards'
+
+  /deck/{deck_id}/pile/{pile_name}/draw/random:
+    get:
+      tags: [Piles]
+      summary: Draw random cards from a pile
+      operationId: drawFromPileRandom
+      parameters:
+        - $ref: '#/components/parameters/DeckId'
+        - $ref: '#/components/parameters/PileName'
+        - name: count
+          in: query
+          required: false
+          schema: { type: integer, minimum: 1, default: 1 }
+      responses:
+        '200':
+          description: Drawn cards payload
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DrawnCards'
+
+  /deck/{deck_id}/pile/{pile_name}/return:
+    get:
+      tags: [Piles]
+      summary: Return cards from a pile to the deck
+      operationId: returnPileToDeck
+      description: Return specific cards (if provided) or the pile’s cards back to the main deck.
+      parameters:
+        - $ref: '#/components/parameters/DeckId'
+        - $ref: '#/components/parameters/PileName'
+        - name: cards
+          in: query
+          required: false
+          description: Comma-separated card codes to return.
+          schema: { type: string }
+      responses:
+        '200':
+          description: Return result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PileResult'
+
+  /deck/new/draw:
+    get:
+      tags: [Draw]
+      summary: Create, shuffle, and immediately draw from a deck
+      operationId: drawFromBrandNewDeck
+      description: Convenience endpoint to draw from a brand-new shuffled deck in the same request.
+      parameters:
+        - name: count
+          in: query
+          required: false
+          schema: { type: integer, minimum: 1, default: 1 }
+      responses:
+        '200':
+          description: Drawn cards payload
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DrawnCards'
+
+  /static/img/back.png:
+    get:
+      tags: [Images]
+      summary: Back-of-card image
+      operationId: getCardBackImage
+      description: Returns a PNG image of the standard card back.
+      responses:
+        '200':
+          description: PNG image
+          content:
+            image/png: {}
+
+components:
+  parameters:
+    DeckId:
+      name: deck_id
+      in: path
+      required: true
+      schema: { type: string }
+      description: Identifier of the deck (returned from creation/shuffle).
+    PileName:
+      name: pile_name
+      in: path
+      required: true
+      schema: { type: string }
+      description: Arbitrary pile name (e.g., `player1`, `discard`).
+
+  schemas:
+    Deck:
+      type: object
+      properties:
+        success: { type: boolean, example: true }
+        deck_id: { type: string, example: 3p40paa87x90 }
+        shuffled: { type: boolean, example: true }
+        remaining: { type: integer, example: 52 }
+    Card:
+      type: object
+      properties:
+        code: { type: string, example: AS }
+        image:
+          type: string
+          format: uri
+          example: https://deckofcardsapi.com/static/img/AS.png
+        images:
+          type: object
+          properties:
+            svg:
+              type: string
+              format: uri
+              example: https://deckofcardsapi.com/static/img/AS.svg
+            png:
+              type: string
+              format: uri
+              example: https://deckofcardsapi.com/static/img/AS.png
+        value: { type: string, example: ACE }
+        suit:
+          type: string
+          enum: [SPADES, DIAMONDS, CLUBS, HEARTS]
+          example: SPADES
+    DrawnCards:
+      type: object
+      properties:
+        success: { type: boolean, example: true }
+        deck_id: { type: string, example: kxozasf3edqu }
+        cards:
+          type: array
+          items: { $ref: '#/components/schemas/Card' }
+        remaining: { type: integer, example: 50 }
+    PileResult:
+      type: object
+      properties:
+        success: { type: boolean, example: true }
+        deck_id: { type: string, example: 3p40paa87x90 }
+        remaining: { type: integer, example: 42 }
+        piles:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Pile'
+    Pile:
+      type: object
+      properties:
+        remaining: { type: integer, example: 2 }
+        cards:
+          type: array
+          description: Present on list/draw responses that include full card objects.
+          items: { $ref: '#/components/schemas/Card' }
+
+
