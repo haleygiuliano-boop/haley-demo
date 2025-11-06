@@ -291,6 +291,8 @@ spec:
             - Piles
           summary: Draw from the bottom of a pile
           operationId: drawFromPileBottom
+          description: |
+            draw last 'card' from bottom of the pile
           parameters:
             - $ref: "#/components/parameters/DeckId"
             - $ref: "#/components/parameters/PileName"
@@ -314,6 +316,8 @@ spec:
             - Piles
           summary: Draw random cards from a pile
           operationId: drawFromPileRandom
+          description: |
+            draw random 'cards' from the pile
           parameters:
             - $ref: "#/components/parameters/DeckId"
             - $ref: "#/components/parameters/PileName"
@@ -498,4 +502,4 @@ spec:
   meta:
     id: spc_51ea0541c76347bfb46599b880a7db77
     created: 1762461413810
-    modified: 1762461421279
+    modified: 1762462092391
