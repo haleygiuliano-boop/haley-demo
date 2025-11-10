@@ -1,0 +1,2646 @@
+type: spec.insomnia.rest/5.0
+name: GitSync project example
+meta:
+  id: wrk_b2f599f632d04708a3a2cc2bd0542708
+  created: 1762779827161
+  modified: 1762779851865
+  description: ""
+collection:
+  - name: HTTP Methods
+    meta:
+      id: fld_ef59020a342f4dfd81eca527efa32ae2
+      created: 1762779865173
+      modified: 1762779865173
+      sortKey: -1762779865173
+      description: Testing different HTTP verbs
+    children:
+      - url: "{{ _.base_url }}/delete"
+        name: The request's DELETE parameters.
+        meta:
+          id: req_d6a2029bd3224e56b8399ff122afca1d
+          created: 1762779865186
+          modified: 1762779865186
+          isPrivate: false
+          description: The request's DELETE parameters.
+          sortKey: -1762779865186
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/get"
+        name: The request's query parameters.
+        meta:
+          id: req_07d110e9b25643d988e8cb34ec7a2868
+          created: 1762779865187
+          modified: 1762779865187
+          isPrivate: false
+          description: The request's query parameters.
+          sortKey: -1762779865187
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/patch"
+        name: The request's PATCH parameters.
+        meta:
+          id: req_013631ab345b43988f9fa1753ce91ead
+          created: 1762779865189
+          modified: 1762779865189
+          isPrivate: false
+          description: The request's PATCH parameters.
+          sortKey: -1762779865189
+        method: PATCH
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/post"
+        name: The request's POST parameters.
+        meta:
+          id: req_9401d5c76571425fa8c11435d301c762
+          created: 1762779865189
+          modified: 1762779865189
+          isPrivate: false
+          description: The request's POST parameters.
+          sortKey: -1762779865189
+        method: POST
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/put"
+        name: The request's PUT parameters.
+        meta:
+          id: req_bda6717901d34d45b0732bb183a97ff3
+          created: 1762779865189
+          modified: 1762779865189
+          isPrivate: false
+          description: The request's PUT parameters.
+          sortKey: -1762779865189
+        method: PUT
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Request inspection
+    meta:
+      id: fld_7a24f0b1968946ed8dbec0dd828d5579
+      created: 1762779865174
+      modified: 1762779865174
+      sortKey: -1762779865174
+      description: Inspect the request data
+    children:
+      - url: "{{ _.base_url }}/headers"
+        name: Return the incoming request's HTTP headers.
+        meta:
+          id: req_16a263c46e7e4357a57fe2c1d11664db
+          created: 1762779865187
+          modified: 1762779865187
+          isPrivate: false
+          description: Return the incoming request's HTTP headers.
+          sortKey: -1762779865187
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/ip"
+        name: Returns the requester's IP Address.
+        meta:
+          id: req_8b959941cc55478cb1df90099a9fec99
+          created: 1762779865188
+          modified: 1762779865188
+          isPrivate: false
+          description: Returns the requester's IP Address.
+          sortKey: -1762779865188
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/user-agent"
+        name: Return the incoming requests's User-Agent header.
+        meta:
+          id: req_0ef2b17f1b984d79b5e980ee9e60f17c
+          created: 1762779865192
+          modified: 1762779865192
+          isPrivate: false
+          description: Return the incoming requests's User-Agent header.
+          sortKey: -1762779865192
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Status codes
+    meta:
+      id: fld_d8b02bd0b35e420f843515164c13a14a
+      created: 1762779865174
+      modified: 1762779865174
+      sortKey: -1762779865174
+      description: Generates responses with given status code
+    children:
+      - url: "{{ _.base_url }}/status/{{ _.codes }}"
+        name: Return status code or random status code if more than one are given
+        meta:
+          id: req_169ba639f6ff4843a0840c5f4dc18b8a
+          created: 1762779865191
+          modified: 1762779865191
+          isPrivate: false
+          description: Return status code or random status code if more than one are given
+          sortKey: -1762779865191
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/status/{{ _.codes }}"
+        name: Return status code or random status code if more than one are given
+        meta:
+          id: req_28ade801b82b47afadeabde5bb7a70d0
+          created: 1762779865191
+          modified: 1762779865191
+          isPrivate: false
+          description: Return status code or random status code if more than one are given
+          sortKey: -1762779865191
+        method: POST
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/status/{{ _.codes }}"
+        name: Return status code or random status code if more than one are given
+        meta:
+          id: req_2d4206146ae747feaf327f9550519f27
+          created: 1762779865191
+          modified: 1762779865191
+          isPrivate: false
+          description: Return status code or random status code if more than one are given
+          sortKey: -1762779865191
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/status/{{ _.codes }}"
+        name: Return status code or random status code if more than one are given
+        meta:
+          id: req_d022a2a886ba47fcb4cf201d580dede7
+          created: 1762779865191
+          modified: 1762779865191
+          isPrivate: false
+          description: Return status code or random status code if more than one are given
+          sortKey: -1762779865191
+        method: PATCH
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/status/{{ _.codes }}"
+        name: Return status code or random status code if more than one are given
+        meta:
+          id: req_ec708eef6ba9467e81c716ee361f8a30
+          created: 1762779865192
+          modified: 1762779865192
+          isPrivate: false
+          description: Return status code or random status code if more than one are given
+          sortKey: -1762779865192
+        method: PUT
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Auth
+    meta:
+      id: fld_eabf60cb13c74cf4b2691a2d794aaba2
+      created: 1762779865174
+      modified: 1762779865174
+      sortKey: -1762779865174
+      description: Auth methods
+    children:
+      - url: "{{ _.base_url }}/basic-auth/{{ _.user }}/{{ _.passwd }}"
+        name: Prompts the user for authorization using HTTP Basic Auth.
+        meta:
+          id: req_49afb24fde464c7b89328c1149bbd03d
+          created: 1762779865183
+          modified: 1762779865183
+          isPrivate: false
+          description: Prompts the user for authorization using HTTP Basic Auth.
+          sortKey: -1762779865183
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/bearer"
+        name: Prompts the user for authorization using bearer authentication.
+        meta:
+          id: req_07c124b9f5bf430aac2c71d89ace0b3d
+          created: 1762779865184
+          modified: 1762779865184
+          isPrivate: false
+          description: Prompts the user for authorization using bearer authentication.
+          sortKey: -1762779865184
+        method: GET
+        headers:
+          - name: Authorization
+            disabled: true
+            value: "null"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/digest-auth/{{ _.qop }}/{{ _.user }}/{{ _.passwd }}/{{
+          _.algorithm }}"
+        name: Prompts the user for authorization using Digest Auth + Algorithm.
+        meta:
+          id: req_32eb2d553d6d40f9999a16fafb9b0f1e
+          created: 1762779865186
+          modified: 1762779865186
+          isPrivate: false
+          description: Prompts the user for authorization using Digest Auth + Algorithm.
+          sortKey: -1762779865186
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/digest-auth/{{ _.qop }}/{{ _.user }}/{{ _.passwd }}/{{
+          _.algorithm }}/{{ _.stale_after }}"
+        name: Prompts the user for authorization using Digest Auth + Algorithm.
+        meta:
+          id: req_9516dd4db7494703b6f360ed6abaffe2
+          created: 1762779865186
+          modified: 1762779865186
+          isPrivate: false
+          description: Prompts the user for authorization using Digest Auth + Algorithm.
+          sortKey: -1762779865186
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/digest-auth/{{ _.qop }}/{{ _.user }}/{{ _.passwd }}"
+        name: Prompts the user for authorization using Digest Auth.
+        meta:
+          id: req_ad85949be2b44176b159b3c8e2798d50
+          created: 1762779865186
+          modified: 1762779865186
+          isPrivate: false
+          description: Prompts the user for authorization using Digest Auth.
+          sortKey: -1762779865186
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/hidden-basic-auth/{{ _.user }}/{{ _.passwd }}"
+        name: Prompts the user for authorization using HTTP Basic Auth.
+        meta:
+          id: req_b0941a2ddec84b75b906ed0739804db9
+          created: 1762779865187
+          modified: 1762779865187
+          isPrivate: false
+          description: Prompts the user for authorization using HTTP Basic Auth.
+          sortKey: -1762779865187
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Dynamic data
+    meta:
+      id: fld_0660e458529041018bce361f0d067723
+      created: 1762779865175
+      modified: 1762779865175
+      sortKey: -1762779865175
+      description: Generates random and dynamic data
+    children:
+      - url: "{{ _.base_url }}/base64/{{ _.value }}"
+        name: Decodes base64url-encoded string.
+        meta:
+          id: req_b24a0b3d8975463b89138bd0f883319c
+          created: 1762779865183
+          modified: 1762779865183
+          isPrivate: false
+          description: Decodes base64url-encoded string.
+          sortKey: -1762779865183
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/bytes/{{ _.n }}"
+        name: Returns n random bytes generated with given seed
+        meta:
+          id: req_9f5b55a874b34c969986ee3169ac9f0e
+          created: 1762779865184
+          modified: 1762779865184
+          isPrivate: false
+          description: Returns n random bytes generated with given seed
+          sortKey: -1762779865184
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/delay/{{ _.delay }}"
+        name: Returns a delayed response (max of 10 seconds).
+        meta:
+          id: req_1a8d908170dc4d54b726a80e2263b81b
+          created: 1762779865185
+          modified: 1762779865185
+          isPrivate: false
+          description: Returns a delayed response (max of 10 seconds).
+          sortKey: -1762779865185
+        method: PATCH
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/delay/{{ _.delay }}"
+        name: Returns a delayed response (max of 10 seconds).
+        meta:
+          id: req_84c3fb0a73ef4801867affaa7ce60140
+          created: 1762779865185
+          modified: 1762779865185
+          isPrivate: false
+          description: Returns a delayed response (max of 10 seconds).
+          sortKey: -1762779865185
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/delay/{{ _.delay }}"
+        name: Returns a delayed response (max of 10 seconds).
+        meta:
+          id: req_de8dcba8ce71457590c01d1210c6ed7d
+          created: 1762779865185
+          modified: 1762779865185
+          isPrivate: false
+          description: Returns a delayed response (max of 10 seconds).
+          sortKey: -1762779865185
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/delay/{{ _.delay }}"
+        name: Returns a delayed response (max of 10 seconds).
+        meta:
+          id: req_b966dceb29094338bac494570818ffe9
+          created: 1762779865186
+          modified: 1762779865186
+          isPrivate: false
+          description: Returns a delayed response (max of 10 seconds).
+          sortKey: -1762779865186
+        method: PUT
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/delay/{{ _.delay }}"
+        name: Returns a delayed response (max of 10 seconds).
+        meta:
+          id: req_d3527e776cd5464bbfdaef244a1d27fe
+          created: 1762779865186
+          modified: 1762779865186
+          isPrivate: false
+          description: Returns a delayed response (max of 10 seconds).
+          sortKey: -1762779865186
+        method: POST
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/drip"
+        name: Drips data over a duration after an optional initial delay.
+        meta:
+          id: req_d219e8e96b56403a8888ea17a5afb369
+          created: 1762779865187
+          modified: 1762779865187
+          isPrivate: false
+          description: Drips data over a duration after an optional initial delay.
+          sortKey: -1762779865187
+        method: GET
+        parameters:
+          - name: duration
+            disabled: true
+            value: "2"
+          - name: numbytes
+            disabled: true
+            value: "10"
+          - name: code
+            disabled: true
+            value: "200"
+          - name: delay
+            disabled: true
+            value: "2"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/range/{{ _.numbytes }}"
+        name: Streams n random bytes generated with given seed, at given chunk size per
+          packet.
+        meta:
+          id: req_822605494a3c472c91d6b1a2cb31a37c
+          created: 1762779865189
+          modified: 1762779865189
+          isPrivate: false
+          description: Streams n random bytes generated with given seed, at given chunk
+            size per packet.
+          sortKey: -1762779865189
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/links/{{ _.n }}/{{ _.offset }}"
+        name: Generate a page containing n links to other pages which do the same.
+        meta:
+          id: req_eef6c448eefa48548491793118c9dfa0
+          created: 1762779865189
+          modified: 1762779865189
+          isPrivate: false
+          description: Generate a page containing n links to other pages which do the same.
+          sortKey: -1762779865189
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/uuid"
+        name: Return a UUID4.
+        meta:
+          id: req_7ba6e99ecb6e49f0b776f7d3e6c3a074
+          created: 1762779865192
+          modified: 1762779865192
+          isPrivate: false
+          description: Return a UUID4.
+          sortKey: -1762779865192
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/stream/{{ _.n }}"
+        name: Stream n JSON responses
+        meta:
+          id: req_7f2b193283054cf38031875ed9c20707
+          created: 1762779865192
+          modified: 1762779865192
+          isPrivate: false
+          description: Stream n JSON responses
+          sortKey: -1762779865192
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/stream-bytes/{{ _.n }}"
+        name: Streams n random bytes generated with given seed, at given chunk size per
+          packet.
+        meta:
+          id: req_c3613a8052aa484f8dd27c0844e4e6f8
+          created: 1762779865192
+          modified: 1762779865192
+          isPrivate: false
+          description: Streams n random bytes generated with given seed, at given chunk
+            size per packet.
+          sortKey: -1762779865192
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Response formats
+    meta:
+      id: fld_15f02011ff1644d395735955e29eb5d6
+      created: 1762779865175
+      modified: 1762779865175
+      sortKey: -1762779865175
+      description: Returns responses in different data formats
+    children:
+      - url: "{{ _.base_url }}/brotli"
+        name: Returns Brotli-encoded data.
+        meta:
+          id: req_c1e4dbed3a0d4815b675bce60d0d3d57
+          created: 1762779865184
+          modified: 1762779865184
+          isPrivate: false
+          description: Returns Brotli-encoded data.
+          sortKey: -1762779865184
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/deflate"
+        name: Returns Deflate-encoded data.
+        meta:
+          id: req_5abcca4eb5ab4db1a65d461a022c4d12
+          created: 1762779865185
+          modified: 1762779865185
+          isPrivate: false
+          description: Returns Deflate-encoded data.
+          sortKey: -1762779865185
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/deny"
+        name: Returns page denied by robots.txt rules.
+        meta:
+          id: req_43bec84c7a834f19af66a8d717be6ae7
+          created: 1762779865186
+          modified: 1762779865186
+          isPrivate: false
+          description: Returns page denied by robots.txt rules.
+          sortKey: -1762779865186
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/gzip"
+        name: Returns GZip-encoded data.
+        meta:
+          id: req_5de662729c4c48a18baff25dcf9674eb
+          created: 1762779865187
+          modified: 1762779865187
+          isPrivate: false
+          description: Returns GZip-encoded data.
+          sortKey: -1762779865187
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/encoding/utf8"
+        name: Returns a UTF-8 encoded body.
+        meta:
+          id: req_ebe72cf6956c4d0a8b96e60659af8a31
+          created: 1762779865187
+          modified: 1762779865187
+          isPrivate: false
+          description: Returns a UTF-8 encoded body.
+          sortKey: -1762779865187
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/html"
+        name: Returns a simple HTML document.
+        meta:
+          id: req_b8baa7b3496f4652a5c6790ff4225d81
+          created: 1762779865188
+          modified: 1762779865188
+          isPrivate: false
+          description: Returns a simple HTML document.
+          sortKey: -1762779865188
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/json"
+        name: Returns a simple JSON document.
+        meta:
+          id: req_56a00b22fd3140c0b2da442653c8adfe
+          created: 1762779865189
+          modified: 1762779865189
+          isPrivate: false
+          description: Returns a simple JSON document.
+          sortKey: -1762779865189
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/robots.txt"
+        name: Returns some robots.txt rules.
+        meta:
+          id: req_16428e3da7e04ba880650168212ac393
+          created: 1762779865191
+          modified: 1762779865191
+          isPrivate: false
+          description: Returns some robots.txt rules.
+          sortKey: -1762779865191
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/xml"
+        name: Returns a simple XML document.
+        meta:
+          id: req_1f1c3a6fa6ce40bf968ce53e30cdb5d7
+          created: 1762779865192
+          modified: 1762779865192
+          isPrivate: false
+          description: Returns a simple XML document.
+          sortKey: -1762779865192
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Cookies
+    meta:
+      id: fld_7238d9413ce54f068a5233654316d291
+      created: 1762779865175
+      modified: 1762779865175
+      sortKey: -1762779865176
+      description: Creates, reads and deletes Cookies
+    children:
+      - url: "{{ _.base_url }}/cookies"
+        name: Returns cookie data.
+        meta:
+          id: req_ee21237c0e9a40ad9953020e1d37db67
+          created: 1762779865184
+          modified: 1762779865184
+          isPrivate: false
+          description: Returns cookie data.
+          sortKey: -1762779865184
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/cookies/set"
+        name: Sets cookie(s) as provided by the query string and redirects to cookie
+          list.
+        meta:
+          id: req_7ff97cfb089445e0af2df4b346531abf
+          created: 1762779865185
+          modified: 1762779865185
+          isPrivate: false
+          description: Sets cookie(s) as provided by the query string and redirects to
+            cookie list.
+          sortKey: -1762779865185
+        method: GET
+        parameters:
+          - name: freeform
+            disabled: true
+            value: "null"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/cookies/set/{{ _.name }}/{{ _.value }}"
+        name: Sets a cookie and redirects to cookie list.
+        meta:
+          id: req_9cd66f798a214964b787035196f8628b
+          created: 1762779865185
+          modified: 1762779865185
+          isPrivate: false
+          description: Sets a cookie and redirects to cookie list.
+          sortKey: -1762779865185
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/cookies/delete"
+        name: Deletes cookie(s) as provided by the query string and redirects to cookie
+          list.
+        meta:
+          id: req_aefa3a39b8fb4612bbd4e7cc30344f60
+          created: 1762779865185
+          modified: 1762779865185
+          isPrivate: false
+          description: Deletes cookie(s) as provided by the query string and redirects to
+            cookie list.
+          sortKey: -1762779865185
+        method: GET
+        parameters:
+          - name: freeform
+            disabled: true
+            value: "null"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Response inspection
+    meta:
+      id: fld_9723995baf9f4c12aa6246c744606f02
+      created: 1762779865175
+      modified: 1762779865175
+      sortKey: -1762779865175
+      description: Inspect the response data like caching and headers
+    children:
+      - url: "{{ _.base_url }}/cache/{{ _.value }}"
+        name: Sets a Cache-Control header for n seconds.
+        meta:
+          id: req_c7c439f1a9064f3e8bc7ee48f2480884
+          created: 1762779865184
+          modified: 1762779865184
+          isPrivate: false
+          description: Sets a Cache-Control header for n seconds.
+          sortKey: -1762779865184
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/cache"
+        name: Returns a 304 if an If-Modified-Since header or If-None-Match is present.
+          Returns the same as a GET otherwise.
+        meta:
+          id: req_de5718bacfb84efa9f040071f50f6a53
+          created: 1762779865184
+          modified: 1762779865184
+          isPrivate: false
+          description: Returns a 304 if an If-Modified-Since header or If-None-Match is
+            present. Returns the same as a GET otherwise.
+          sortKey: -1762779865184
+        method: GET
+        headers:
+          - name: If-Modified-Since
+            disabled: true
+            value: "null"
+          - name: If-None-Match
+            disabled: true
+            value: "null"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/etag/{{ _.etag }}"
+        name: Assumes the resource has the given etag and responds to If-None-Match and
+          If-Match headers appropriately.
+        meta:
+          id: req_5defb275db4c4aff98e6b0ef1f6d8bfe
+          created: 1762779865187
+          modified: 1762779865187
+          isPrivate: false
+          description: Assumes the resource has the given etag and responds to
+            If-None-Match and If-Match headers appropriately.
+          sortKey: -1762779865187
+        method: GET
+        headers:
+          - name: If-None-Match
+            disabled: true
+            value: "null"
+          - name: If-Match
+            disabled: true
+            value: "null"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/response-headers"
+        name: Returns a set of response headers from the query string.
+        meta:
+          id: req_81e0dd8ee0094dc0848e66c187361260
+          created: 1762779865190
+          modified: 1762779865190
+          isPrivate: false
+          description: Returns a set of response headers from the query string.
+          sortKey: -1762779865190
+        method: GET
+        parameters:
+          - name: freeform
+            disabled: true
+            value: "null"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/response-headers"
+        name: Returns a set of response headers from the query string.
+        meta:
+          id: req_6aba60e43b8c413c8d6ce1613687cd33
+          created: 1762779865191
+          modified: 1762779865191
+          isPrivate: false
+          description: Returns a set of response headers from the query string.
+          sortKey: -1762779865191
+        method: POST
+        parameters:
+          - name: freeform
+            disabled: true
+            value: "null"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Images
+    meta:
+      id: fld_32ecd973836949419961bf529cc28c37
+      created: 1762779865176
+      modified: 1762779865176
+      sortKey: -1762779865176
+      description: Returns different image formats
+    children:
+      - url: "{{ _.base_url }}/image/png"
+        name: Returns a simple PNG image.
+        meta:
+          id: req_3e032d956dc2426a9ee1132edb11ecc1
+          created: 1762779865188
+          modified: 1762779865188
+          isPrivate: false
+          description: Returns a simple PNG image.
+          sortKey: -1762779865188
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/image/svg"
+        name: Returns a simple SVG image.
+        meta:
+          id: req_51f386348f3640488c3aced6ed24e838
+          created: 1762779865188
+          modified: 1762779865188
+          isPrivate: false
+          description: Returns a simple SVG image.
+          sortKey: -1762779865188
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/image/jpeg"
+        name: Returns a simple JPEG image.
+        meta:
+          id: req_666c302464504099a0c717943567ffe4
+          created: 1762779865188
+          modified: 1762779865188
+          isPrivate: false
+          description: Returns a simple JPEG image.
+          sortKey: -1762779865188
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/image"
+        name: Returns a simple image of the type suggest by the Accept header.
+        meta:
+          id: req_ad0c7eefd2f2448bb8f0f0f52a365ca6
+          created: 1762779865188
+          modified: 1762779865188
+          isPrivate: false
+          description: Returns a simple image of the type suggest by the Accept header.
+          sortKey: -1762779865188
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/image/webp"
+        name: Returns a simple WEBP image.
+        meta:
+          id: req_f1ab3b4b91fe4b49a82799cbff553aae
+          created: 1762779865188
+          modified: 1762779865188
+          isPrivate: false
+          description: Returns a simple WEBP image.
+          sortKey: -1762779865188
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Anything
+    meta:
+      id: fld_43b57d39ea834292978b06060be6ac3f
+      created: 1762779865176
+      modified: 1762779865176
+      sortKey: -1762779865176
+      description: Returns anything that is passed to request
+    children:
+      - url: "{{ _.base_url }}/anything"
+        name: Returns anything passed in request data.
+        meta:
+          id: req_f65d8732bfdb460fb72b2dd5e558f6e7
+          created: 1762779865177
+          modified: 1762779865177
+          isPrivate: false
+          description: Returns anything passed in request data.
+          sortKey: -1762779865177
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/anything"
+        name: Returns anything passed in request data.
+        meta:
+          id: req_1514b609ab824f96adf8186641634adf
+          created: 1762779865178
+          modified: 1762779865178
+          isPrivate: false
+          description: Returns anything passed in request data.
+          sortKey: -1762779865178
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/anything"
+        name: Returns anything passed in request data.
+        meta:
+          id: req_a2300e53325d4ff98c6b51b9feea0568
+          created: 1762779865178
+          modified: 1762779865178
+          isPrivate: false
+          description: Returns anything passed in request data.
+          sortKey: -1762779865178
+        method: PATCH
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/anything"
+        name: Returns anything passed in request data.
+        meta:
+          id: req_df6f941ec2ed46b1b83101957bd006b0
+          created: 1762779865178
+          modified: 1762779865178
+          isPrivate: false
+          description: Returns anything passed in request data.
+          sortKey: -1762779865178
+        method: POST
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/anything"
+        name: Returns anything passed in request data.
+        meta:
+          id: req_ad5a742ac1b0450b919f3a9d641a9771
+          created: 1762779865179
+          modified: 1762779865179
+          isPrivate: false
+          description: Returns anything passed in request data.
+          sortKey: -1762779865179
+        method: PUT
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/anything/{{ _.anything }}"
+        name: Returns anything passed in request data.
+        meta:
+          id: req_e44b7bd833be420887329ac7470f203e
+          created: 1762779865179
+          modified: 1762779865179
+          isPrivate: false
+          description: Returns anything passed in request data.
+          sortKey: -1762779865179
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/anything/{{ _.anything }}"
+        name: Returns anything passed in request data.
+        meta:
+          id: req_ffa4378effc54cf29cae87a68dc32d4f
+          created: 1762779865179
+          modified: 1762779865179
+          isPrivate: false
+          description: Returns anything passed in request data.
+          sortKey: -1762779865179
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/anything/{{ _.anything }}"
+        name: Returns anything passed in request data.
+        meta:
+          id: req_e9a38fcfb8354dfd82397f1a31b6a490
+          created: 1762779865180
+          modified: 1762779865180
+          isPrivate: false
+          description: Returns anything passed in request data.
+          sortKey: -1762779865180
+        method: PATCH
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/anything/{{ _.anything }}"
+        name: Returns anything passed in request data.
+        meta:
+          id: req_f420b82cee644ae18c1ec63e7ad660f3
+          created: 1762779865180
+          modified: 1762779865180
+          isPrivate: false
+          description: Returns anything passed in request data.
+          sortKey: -1762779865180
+        method: POST
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/anything/{{ _.anything }}"
+        name: Returns anything passed in request data.
+        meta:
+          id: req_bedd1083312f4f92a69be8aded2f5d86
+          created: 1762779865183
+          modified: 1762779865183
+          isPrivate: false
+          description: Returns anything passed in request data.
+          sortKey: -1762779865183
+        method: PUT
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Redirects
+    meta:
+      id: fld_921c3d99a42742b4aabae857e8c43243
+      created: 1762779865176
+      modified: 1762779865176
+      sortKey: -1762779865176
+      description: Returns different redirect responses
+    children:
+      - url: "{{ _.base_url }}/absolute-redirect/{{ _.n }}"
+        name: Absolutely 302 Redirects n times.
+        meta:
+          id: req_0be9bc230b274c36b1fdfab5ee9179ff
+          created: 1762779865177
+          modified: 1762779865177
+          isPrivate: false
+          description: Absolutely 302 Redirects n times.
+          sortKey: -1762779865177
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/redirect-to"
+        name: 302/3XX Redirects to the given URL.
+        meta:
+          id: req_9aa82233a0784253a9d442122771fb77
+          created: 1762779865189
+          modified: 1762779865189
+          isPrivate: false
+          description: 302/3XX Redirects to the given URL.
+          sortKey: -1762779865189
+        method: DELETE
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/redirect-to"
+        name: 302/3XX Redirects to the given URL.
+        meta:
+          id: req_0208d255194a4f98bd919ef7c9fdda6f
+          created: 1762779865190
+          modified: 1762779865190
+          isPrivate: false
+          description: 302/3XX Redirects to the given URL.
+          sortKey: -1762779865190
+        method: POST
+        body:
+          mimeType: multipart/form-data
+        headers:
+          - name: Content-Type
+            disabled: false
+            value: multipart/form-data
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/redirect-to"
+        name: 302/3XX Redirects to the given URL.
+        meta:
+          id: req_035ede49c48444a0ba5da1bdf39949c5
+          created: 1762779865190
+          modified: 1762779865190
+          isPrivate: false
+          description: 302/3XX Redirects to the given URL.
+          sortKey: -1762779865190
+        method: PATCH
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/relative-redirect/{{ _.n }}"
+        name: Relatively 302 Redirects n times.
+        meta:
+          id: req_3c414834fdff4ac3a34c2e6b4e8562e0
+          created: 1762779865190
+          modified: 1762779865190
+          isPrivate: false
+          description: Relatively 302 Redirects n times.
+          sortKey: -1762779865190
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/redirect-to"
+        name: 302/3XX Redirects to the given URL.
+        meta:
+          id: req_5164f01f2cfa4acc955b6930102a2d2a
+          created: 1762779865190
+          modified: 1762779865190
+          isPrivate: false
+          description: 302/3XX Redirects to the given URL.
+          sortKey: -1762779865190
+        method: GET
+        parameters:
+          - name: url
+            disabled: false
+            value: string
+          - name: status_code
+            disabled: true
+            value: "null"
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/redirect/{{ _.n }}"
+        name: 302 Redirects n times.
+        meta:
+          id: req_52be635319ea40b1bd2bfb9dc0bfc336
+          created: 1762779865190
+          modified: 1762779865190
+          isPrivate: false
+          description: 302 Redirects n times.
+          sortKey: -1762779865190
+        method: GET
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/redirect-to"
+        name: 302/3XX Redirects to the given URL.
+        meta:
+          id: req_88bac5f543d642568ba165e6ee70e9f7
+          created: 1762779865190
+          modified: 1762779865190
+          isPrivate: false
+          description: 302/3XX Redirects to the given URL.
+          sortKey: -1762779865190
+        method: PUT
+        body:
+          mimeType: multipart/form-data
+        headers:
+          - name: Content-Type
+            disabled: false
+            value: multipart/form-data
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_b57e74a3ee035fc0d674554a18e735a1be0867ff
+    created: 1762779833176
+    modified: 1762779833176
+environments:
+  name: Base Environment
+  meta:
+    id: env_b57e74a3ee035fc0d674554a18e735a1be0867ff
+    created: 1762779827165
+    modified: 1762779865172
+    isPrivate: false
+  data:
+    base_url: "{{ _.scheme }}://{{ _.host }}{{ _.base_path }}"
+  subEnvironments:
+    - name: OpenAPI env httpbin.konghq.com
+      meta:
+        id: env_ab5aa140df47466bbdfbe90534aa4b36
+        created: 1762779865172
+        modified: 1762779865172
+        isPrivate: false
+        sortKey: 1762779865172
+      data:
+        scheme: https
+        base_path: ""
+        host: httpbin.konghq.com
+    - name: OpenAPI env httpbin.org
+      meta:
+        id: env_44f6b8d7a9184466a796f50d0f27c0c1
+        created: 1762779865173
+        modified: 1762779865173
+        isPrivate: false
+        sortKey: 1762779865173
+      data:
+        scheme: https
+        base_path: ""
+        host: httpbin.org
+spec:
+  contents:
+    openapi: 3.0.1
+    info:
+      contact:
+        name: Haley Giuliano
+        url: https://konghq.com
+      description: A simple HTTP Request & Response Service based on httpbin.org
+        service by Kenneth Reitz with updated OpenAPI specification
+      title: httpbin
+      version: 1.0.0
+    servers:
+      - url: https://httpbin.konghq.com
+      - url: https://httpbin.org
+    paths:
+      /absolute-redirect/{n}:
+        get:
+          operationId: absolute-redirect-n-get
+          summary: Absolutely 302 Redirects n times.
+          description: Absolutely 302 Redirects n times.
+          parameters:
+            - name: n
+              in: path
+              required: true
+          responses:
+            "302":
+              description: A redirection.
+          tags:
+            - Redirects
+      /anything:
+        delete:
+          operationId: anything-delete
+          summary: Returns anything passed in request data.
+          description: Returns anything passed in request data.
+          responses:
+            "200":
+              description: Anything passed in request
+          tags:
+            - Anything
+        get:
+          operationId: anything-get
+          summary: Returns anything passed in request data.
+          description: Returns anything passed in request data.
+          responses:
+            "200":
+              description: Anything passed in request
+          tags:
+            - Anything
+        patch:
+          operationId: anything-patch
+          summary: Returns anything passed in request data.
+          description: Returns anything passed in request data.
+          responses:
+            "200":
+              description: Anything passed in request
+          tags:
+            - Anything
+        post:
+          operationId: anything-post
+          summary: Returns anything passed in request data.
+          description: Returns anything passed in request data.
+          responses:
+            "200":
+              description: Anything passed in request
+          tags:
+            - Anything
+        put:
+          operationId: anything-put
+          summary: Returns anything passed in request data.
+          description: Returns anything passed in request data.
+          responses:
+            "200":
+              description: Anything passed in request
+          tags:
+            - Anything
+      /anything/{anything}:
+        delete:
+          operationId: anything-anything-delete
+          summary: Returns anything passed in request data.
+          description: Returns anything passed in request data.
+          parameters:
+            - name: anything
+              in: path
+              required: true
+          responses:
+            "200":
+              description: Anything passed in request
+          tags:
+            - Anything
+        get:
+          operationId: anything-anything-get
+          summary: Returns anything passed in request data.
+          description: Returns anything passed in request data.
+          parameters:
+            - name: anything
+              in: path
+              required: true
+          responses:
+            "200":
+              description: Anything passed in request
+          tags:
+            - Anything
+        patch:
+          operationId: anything-anything-patch
+          summary: Returns anything passed in request data.
+          description: Returns anything passed in request data.
+          parameters:
+            - name: anything
+              in: path
+              required: true
+          responses:
+            "200":
+              description: Anything passed in request
+          tags:
+            - Anything
+        post:
+          operationId: anything-anything-post
+          summary: Returns anything passed in request data.
+          description: Returns anything passed in request data.
+          parameters:
+            - name: anything
+              in: path
+              required: true
+          responses:
+            "200":
+              description: Anything passed in request
+          tags:
+            - Anything
+        put:
+          operationId: anything-anything-put
+          summary: Returns anything passed in request data.
+          description: Returns anything passed in request data.
+          parameters:
+            - name: anything
+              in: path
+              required: true
+          responses:
+            "200":
+              description: Anything passed in request
+          tags:
+            - Anything
+      /base64/{value}:
+        get:
+          operationId: base-value-get
+          summary: Decodes base64url-encoded string.
+          description: Decodes base64url-encoded string.
+          parameters:
+            - name: value
+              in: path
+              required: true
+              schema:
+                type: string
+                default: SFRUUEJJTiBpcyBhd2Vzb21l
+          responses:
+            "200":
+              description: Decoded base64 content.
+          tags:
+            - Dynamic data
+      /basic-auth/{user}/{passwd}:
+        get:
+          operationId: basic-auth-user-passwd-get
+          summary: Prompts the user for authorization using HTTP Basic Auth.
+          description: Prompts the user for authorization using HTTP Basic Auth.
+          parameters:
+            - name: user
+              in: path
+              required: true
+              schema:
+                type: string
+            - name: passwd
+              in: path
+              required: true
+              schema:
+                type: string
+          responses:
+            "200":
+              description: Sucessful authentication.
+            "401":
+              description: Unsuccessful authentication.
+          tags:
+            - Auth
+      /bearer:
+        get:
+          operationId: bearer-get
+          summary: Prompts the user for authorization using bearer authentication.
+          description: Prompts the user for authorization using bearer authentication.
+          parameters:
+            - name: Authorization
+              in: header
+          responses:
+            "200":
+              description: Sucessful authentication.
+            "401":
+              description: Unsuccessful authentication.
+          tags:
+            - Auth
+      /brotli:
+        get:
+          operationId: brotli-get
+          summary: Returns Brotli-encoded data.
+          description: Returns Brotli-encoded data.
+          responses:
+            "200":
+              description: Brotli-encoded data.
+          tags:
+            - Response formats
+      /bytes/{n}:
+        get:
+          operationId: bytes-n-get
+          summary: Returns n random bytes generated with given seed
+          description: Returns n random bytes generated with given seed
+          parameters:
+            - name: n
+              in: path
+              required: true
+          responses:
+            "200":
+              description: Bytes.
+          tags:
+            - Dynamic data
+      /cache:
+        get:
+          operationId: cache-get
+          summary: Returns a 304 if an If-Modified-Since header or If-None-Match is
+            present. Returns the same as a GET otherwise.
+          description: Returns a 304 if an If-Modified-Since header or If-None-Match is
+            present. Returns the same as a GET otherwise.
+          parameters:
+            - name: If-Modified-Since
+              in: header
+            - name: If-None-Match
+              in: header
+          responses:
+            "200":
+              description: Cached response
+            "304":
+              description: Modified
+          tags:
+            - Response inspection
+      /cache/{value}:
+        get:
+          operationId: cache-value-get
+          summary: Sets a Cache-Control header for n seconds.
+          description: Sets a Cache-Control header for n seconds.
+          parameters:
+            - name: value
+              in: path
+              required: true
+              schema:
+                type: integer
+          responses:
+            "200":
+              description: Cache control set
+          tags:
+            - Response inspection
+      /cookies:
+        get:
+          operationId: cookies-get
+          summary: Returns cookie data.
+          description: Returns cookie data.
+          responses:
+            "200":
+              description: Set cookies.
+          tags:
+            - Cookies
+      /cookies/delete:
+        get:
+          operationId: cookies-delete-get
+          summary: Deletes cookie(s) as provided by the query string and redirects to
+            cookie list.
+          description: Deletes cookie(s) as provided by the query string and redirects to
+            cookie list.
+          parameters:
+            - name: freeform
+              in: query
+              allowEmptyValue: true
+          responses:
+            "200":
+              description: Redirect to cookie list
+          tags:
+            - Cookies
+      /cookies/set:
+        get:
+          operationId: cookies-set-get
+          summary: Sets cookie(s) as provided by the query string and redirects to cookie
+            list.
+          description: Sets cookie(s) as provided by the query string and redirects to
+            cookie list.
+          parameters:
+            - name: freeform
+              in: query
+              allowEmptyValue: true
+          responses:
+            "200":
+              description: Redirect to cookie list
+          tags:
+            - Cookies
+      /cookies/set/{name}/{value}:
+        get:
+          operationId: cookies-set-name-value-get
+          summary: Sets a cookie and redirects to cookie list.
+          description: Sets a cookie and redirects to cookie list.
+          parameters:
+            - name: name
+              in: path
+              required: true
+              schema:
+                type: string
+            - name: value
+              in: path
+              required: true
+              schema:
+                type: string
+          responses:
+            "200":
+              description: Set cookies and redirects to cookie list.
+          tags:
+            - Cookies
+      /deflate:
+        get:
+          operationId: deflate-get
+          summary: Returns Deflate-encoded data.
+          description: Returns Deflate-encoded data.
+          responses:
+            "200":
+              description: Defalte-encoded data.
+          tags:
+            - Response formats
+      /delay/{delay}:
+        delete:
+          operationId: delay-delay-delete
+          summary: Returns a delayed response (max of 10 seconds).
+          description: Returns a delayed response (max of 10 seconds).
+          parameters:
+            - name: delay
+              in: path
+              required: true
+          responses:
+            "200":
+              description: A delayed response.
+          tags:
+            - Dynamic data
+        get:
+          operationId: delay-delay-get
+          summary: Returns a delayed response (max of 10 seconds).
+          description: Returns a delayed response (max of 10 seconds).
+          parameters:
+            - name: delay
+              in: path
+              required: true
+          responses:
+            "200":
+              description: A delayed response.
+          tags:
+            - Dynamic data
+        patch:
+          operationId: delay-delay-patch
+          summary: Returns a delayed response (max of 10 seconds).
+          description: Returns a delayed response (max of 10 seconds).
+          parameters:
+            - name: delay
+              in: path
+              required: true
+          responses:
+            "200":
+              description: A delayed response.
+          tags:
+            - Dynamic data
+        post:
+          operationId: delay-delay-post
+          summary: Returns a delayed response (max of 10 seconds).
+          description: Returns a delayed response (max of 10 seconds).
+          parameters:
+            - name: delay
+              in: path
+              required: true
+          responses:
+            "200":
+              description: A delayed response.
+          tags:
+            - Dynamic data
+        put:
+          operationId: delay-delay-put
+          summary: Returns a delayed response (max of 10 seconds).
+          description: Returns a delayed response (max of 10 seconds).
+          parameters:
+            - name: delay
+              in: path
+              required: true
+          responses:
+            "200":
+              description: A delayed response.
+          tags:
+            - Dynamic data
+      /delete:
+        delete:
+          operationId: delete-delete
+          summary: The request's DELETE parameters.
+          description: The request's DELETE parameters.
+          responses:
+            "200":
+              description: The request's DELETE parameters.
+          tags:
+            - HTTP Methods
+      /deny:
+        get:
+          operationId: deny-get
+          summary: Returns page denied by robots.txt rules.
+          description: Returns page denied by robots.txt rules.
+          responses:
+            "200":
+              description: Denied message
+          tags:
+            - Response formats
+      /digest-auth/{qop}/{user}/{passwd}:
+        get:
+          operationId: digest-auth-qop-user-passwd-get
+          summary: Prompts the user for authorization using Digest Auth.
+          description: Prompts the user for authorization using Digest Auth.
+          parameters:
+            - name: qop
+              in: path
+              description: auth or auth-int
+              required: true
+              schema:
+                type: string
+            - name: user
+              in: path
+              required: true
+              schema:
+                type: string
+            - name: passwd
+              in: path
+              required: true
+              schema:
+                type: string
+          responses:
+            "200":
+              description: Sucessful authentication.
+            "401":
+              description: Unsuccessful authentication.
+          tags:
+            - Auth
+      /digest-auth/{qop}/{user}/{passwd}/{algorithm}:
+        get:
+          operationId: digest-auth-qop-user-passwd-algorithm-get
+          summary: Prompts the user for authorization using Digest Auth + Algorithm.
+          description: Prompts the user for authorization using Digest Auth + Algorithm.
+          parameters:
+            - name: qop
+              in: path
+              description: auth or auth-int
+              required: true
+              schema:
+                type: string
+            - name: user
+              in: path
+              required: true
+              schema:
+                type: string
+            - name: passwd
+              in: path
+              required: true
+              schema:
+                type: string
+            - name: algorithm
+              in: path
+              description: MD5, SHA-256, SHA-512
+              required: true
+              schema:
+                type: string
+                default: MD5
+          responses:
+            "200":
+              description: Sucessful authentication.
+            "401":
+              description: Unsuccessful authentication.
+          tags:
+            - Auth
+      /digest-auth/{qop}/{user}/{passwd}/{algorithm}/{stale_after}:
+        get:
+          operationId: digest-auth-qop-user-passwd-algorithm-stale-after-get
+          summary: Prompts the user for authorization using Digest Auth + Algorithm.
+          description: Prompts the user for authorization using Digest Auth + Algorithm.
+          parameters:
+            - name: qop
+              in: path
+              description: auth or auth-int
+              required: true
+              schema:
+                type: string
+            - name: user
+              in: path
+              required: true
+              schema:
+                type: string
+            - name: passwd
+              in: path
+              required: true
+              schema:
+                type: string
+            - name: algorithm
+              in: path
+              description: MD5, SHA-256, SHA-512
+              required: true
+              schema:
+                type: string
+                default: MD5
+            - name: stale_after
+              in: path
+              required: true
+              schema:
+                type: string
+                default: never
+          responses:
+            "200":
+              description: Sucessful authentication.
+            "401":
+              description: Unsuccessful authentication.
+          tags:
+            - Auth
+      /drip:
+        get:
+          operationId: drip-get
+          summary: Drips data over a duration after an optional initial delay.
+          description: Drips data over a duration after an optional initial delay.
+          parameters:
+            - name: duration
+              in: query
+              description: The amount of time (in seconds) over which to drip each byte
+              schema:
+                type: number
+                default: 2
+            - name: numbytes
+              in: query
+              description: The number of bytes to respond with
+              schema:
+                type: integer
+                default: 10
+            - name: code
+              in: query
+              description: The response code that will be returned
+              schema:
+                type: integer
+                default: 200
+            - name: delay
+              in: query
+              description: The amount of time (in seconds) to delay before responding
+              schema:
+                type: number
+                default: 2
+          responses:
+            "200":
+              description: A dripped response.
+          tags:
+            - Dynamic data
+      /encoding/utf8:
+        get:
+          operationId: encoding-utf-get
+          summary: Returns a UTF-8 encoded body.
+          description: Returns a UTF-8 encoded body.
+          responses:
+            "200":
+              description: Encoded UTF-8 content.
+          tags:
+            - Response formats
+      /etag/{etag}:
+        get:
+          operationId: etag-etag-get
+          summary: Assumes the resource has the given etag and responds to If-None-Match
+            and If-Match headers appropriately.
+          description: Assumes the resource has the given etag and responds to
+            If-None-Match and If-Match headers appropriately.
+          parameters:
+            - name: etag
+              in: path
+              required: true
+            - name: If-None-Match
+              in: header
+            - name: If-Match
+              in: header
+          responses:
+            "200":
+              description: Normal response
+            "412":
+              description: match
+          tags:
+            - Response inspection
+      /get:
+        get:
+          operationId: get-get
+          summary: The request's query parameters.
+          description: The request's query parameters.
+          responses:
+            "200":
+              description: The request's query parameters.
+          tags:
+            - HTTP Methods
+      /gzip:
+        get:
+          operationId: gzip-get
+          summary: Returns GZip-encoded data.
+          description: Returns GZip-encoded data.
+          responses:
+            "200":
+              description: GZip-encoded data.
+          tags:
+            - Response formats
+      /headers:
+        get:
+          operationId: headers-get
+          summary: Return the incoming request's HTTP headers.
+          description: Return the incoming request's HTTP headers.
+          responses:
+            "200":
+              description: The request's headers.
+          tags:
+            - Request inspection
+      /hidden-basic-auth/{user}/{passwd}:
+        get:
+          operationId: hidden-basic-auth-user-passwd-get
+          summary: Prompts the user for authorization using HTTP Basic Auth.
+          description: Prompts the user for authorization using HTTP Basic Auth.
+          parameters:
+            - name: user
+              in: path
+              required: true
+              schema:
+                type: string
+            - name: passwd
+              in: path
+              required: true
+              schema:
+                type: string
+          responses:
+            "200":
+              description: Sucessful authentication.
+            "404":
+              description: Unsuccessful authentication.
+          tags:
+            - Auth
+      /html:
+        get:
+          operationId: html-get
+          summary: Returns a simple HTML document.
+          description: Returns a simple HTML document.
+          responses:
+            "200":
+              description: An HTML page.
+          tags:
+            - Response formats
+      /image:
+        get:
+          operationId: image-get
+          summary: Returns a simple image of the type suggest by the Accept header.
+          description: Returns a simple image of the type suggest by the Accept header.
+          responses:
+            "200":
+              description: An image.
+          tags:
+            - Images
+      /image/jpeg:
+        get:
+          operationId: image-jpeg-get
+          summary: Returns a simple JPEG image.
+          description: Returns a simple JPEG image.
+          responses:
+            "200":
+              description: A JPEG image.
+          tags:
+            - Images
+      /image/png:
+        get:
+          operationId: image-png-get
+          summary: Returns a simple PNG image.
+          description: Returns a simple PNG image.
+          responses:
+            "200":
+              description: A PNG image.
+          tags:
+            - Images
+      /image/svg:
+        get:
+          operationId: image-svg-get
+          summary: Returns a simple SVG image.
+          description: Returns a simple SVG image.
+          responses:
+            "200":
+              description: An SVG image.
+          tags:
+            - Images
+      /image/webp:
+        get:
+          operationId: image-webp-get
+          summary: Returns a simple WEBP image.
+          description: Returns a simple WEBP image.
+          responses:
+            "200":
+              description: A WEBP image.
+          tags:
+            - Images
+      /ip:
+        get:
+          operationId: ip-get
+          summary: Returns the requester's IP Address.
+          description: Returns the requester's IP Address.
+          responses:
+            "200":
+              description: The Requester's IP Address.
+          tags:
+            - Request inspection
+      /json:
+        get:
+          operationId: json-get
+          summary: Returns a simple JSON document.
+          description: Returns a simple JSON document.
+          responses:
+            "200":
+              description: An JSON document.
+          tags:
+            - Response formats
+      /links/{n}/{offset}:
+        get:
+          operationId: links-n-offset-get
+          summary: Generate a page containing n links to other pages which do the same.
+          description: Generate a page containing n links to other pages which do the same.
+          parameters:
+            - name: n
+              in: path
+              required: true
+            - name: offset
+              in: path
+              required: true
+          responses:
+            "200":
+              description: HTML links.
+          tags:
+            - Dynamic data
+      /patch:
+        patch:
+          operationId: patch-patch
+          summary: The request's PATCH parameters.
+          description: The request's PATCH parameters.
+          responses:
+            "200":
+              description: The request's PATCH parameters.
+          tags:
+            - HTTP Methods
+      /post:
+        post:
+          operationId: post-post
+          summary: The request's POST parameters.
+          description: The request's POST parameters.
+          responses:
+            "200":
+              description: The request's POST parameters.
+          tags:
+            - HTTP Methods
+      /put:
+        put:
+          operationId: put-put
+          summary: The request's PUT parameters.
+          description: The request's PUT parameters.
+          responses:
+            "200":
+              description: The request's PUT parameters.
+          tags:
+            - HTTP Methods
+      /range/{numbytes}:
+        get:
+          operationId: range-numbytes-get
+          summary: Streams n random bytes generated with given seed, at given chunk size
+            per packet.
+          description: Streams n random bytes generated with given seed, at given chunk
+            size per packet.
+          parameters:
+            - name: numbytes
+              in: path
+              required: true
+          responses:
+            "200":
+              description: Bytes.
+          tags:
+            - Dynamic data
+      /redirect-to:
+        delete:
+          operationId: redirect-to-delete
+          summary: 302/3XX Redirects to the given URL.
+          description: 302/3XX Redirects to the given URL.
+          responses:
+            "302":
+              description: A redirection.
+          tags:
+            - Redirects
+        get:
+          operationId: redirect-to-get
+          summary: 302/3XX Redirects to the given URL.
+          description: 302/3XX Redirects to the given URL.
+          parameters:
+            - name: url
+              in: query
+              required: true
+              schema:
+                type: string
+            - name: status_code
+              in: query
+          responses:
+            "302":
+              description: A redirection.
+          tags:
+            - Redirects
+        patch:
+          operationId: redirect-to-patch
+          summary: 302/3XX Redirects to the given URL.
+          description: 302/3XX Redirects to the given URL.
+          responses:
+            "302":
+              description: A redirection.
+          tags:
+            - Redirects
+        post:
+          operationId: redirect-to-post
+          summary: 302/3XX Redirects to the given URL.
+          description: 302/3XX Redirects to the given URL.
+          requestBody:
+            required: true
+            content:
+              multipart/form-data:
+                schema:
+                  type: object
+                  properties:
+                    url:
+                      type: string
+                  required:
+                    - url
+          responses:
+            "302":
+              description: A redirection.
+          tags:
+            - Redirects
+        put:
+          operationId: redirect-to-put
+          summary: 302/3XX Redirects to the given URL.
+          description: 302/3XX Redirects to the given URL.
+          requestBody:
+            required: true
+            content:
+              multipart/form-data:
+                schema:
+                  type: object
+                  properties:
+                    url:
+                      type: string
+                  required:
+                    - url
+          responses:
+            "302":
+              description: A redirection.
+          tags:
+            - Redirects
+      /redirect/{n}:
+        get:
+          operationId: redirect-n-get
+          summary: 302 Redirects n times.
+          description: 302 Redirects n times.
+          parameters:
+            - name: n
+              in: path
+              required: true
+          responses:
+            "302":
+              description: A redirection.
+          tags:
+            - Redirects
+      /relative-redirect/{n}:
+        get:
+          operationId: relative-redirect-n-get
+          summary: Relatively 302 Redirects n times.
+          description: Relatively 302 Redirects n times.
+          parameters:
+            - name: n
+              in: path
+              required: true
+          responses:
+            "302":
+              description: A redirection.
+          tags:
+            - Redirects
+      /response-headers:
+        get:
+          operationId: response-headers-get
+          summary: Returns a set of response headers from the query string.
+          description: Returns a set of response headers from the query string.
+          parameters:
+            - name: freeform
+              in: query
+              allowEmptyValue: true
+          responses:
+            "200":
+              description: Response headers
+          tags:
+            - Response inspection
+        post:
+          operationId: response-headers-post
+          summary: Returns a set of response headers from the query string.
+          description: Returns a set of response headers from the query string.
+          parameters:
+            - name: freeform
+              in: query
+              allowEmptyValue: true
+          responses:
+            "200":
+              description: Response headers
+          tags:
+            - Response inspection
+      /robots.txt:
+        get:
+          operationId: robots-txt-get
+          summary: Returns some robots.txt rules.
+          description: Returns some robots.txt rules.
+          responses:
+            "200":
+              description: Robots file
+          tags:
+            - Response formats
+      /status/{codes}:
+        delete:
+          operationId: status-codes-delete
+          summary: Return status code or random status code if more than one are given
+          description: Return status code or random status code if more than one are given
+          parameters:
+            - name: codes
+              in: path
+              required: true
+          responses:
+            "100":
+              description: Informational responses
+            "200":
+              description: Success
+            "300":
+              description: Redirection
+            "400":
+              description: Client Errors
+            "500":
+              description: Server Errors
+          tags:
+            - Status codes
+        get:
+          operationId: status-codes-get
+          summary: Return status code or random status code if more than one are given
+          description: Return status code or random status code if more than one are given
+          parameters:
+            - name: codes
+              in: path
+              required: true
+          responses:
+            "100":
+              description: Informational responses
+            "200":
+              description: Success
+            "300":
+              description: Redirection
+            "400":
+              description: Client Errors
+            "500":
+              description: Server Errors
+          tags:
+            - Status codes
+        patch:
+          operationId: status-codes-patch
+          summary: Return status code or random status code if more than one are given
+          description: Return status code or random status code if more than one are given
+          parameters:
+            - name: codes
+              in: path
+              required: true
+          responses:
+            "100":
+              description: Informational responses
+            "200":
+              description: Success
+            "300":
+              description: Redirection
+            "400":
+              description: Client Errors
+            "500":
+              description: Server Errors
+          tags:
+            - Status codes
+        post:
+          operationId: status-codes-post
+          summary: Return status code or random status code if more than one are given
+          description: Return status code or random status code if more than one are given
+          parameters:
+            - name: codes
+              in: path
+              required: true
+          responses:
+            "100":
+              description: Informational responses
+            "200":
+              description: Success
+            "300":
+              description: Redirection
+            "400":
+              description: Client Errors
+            "500":
+              description: Server Errors
+          tags:
+            - Status codes
+        put:
+          operationId: status-codes-put
+          summary: Return status code or random status code if more than one are given
+          description: Return status code or random status code if more than one are given
+          parameters:
+            - name: codes
+              in: path
+              required: true
+          responses:
+            "100":
+              description: Informational responses
+            "200":
+              description: Success
+            "300":
+              description: Redirection
+            "400":
+              description: Client Errors
+            "500":
+              description: Server Errors
+          tags:
+            - Status codes
+      /stream-bytes/{n}:
+        get:
+          operationId: stream-bytes-n-get
+          summary: Streams n random bytes generated with given seed, at given chunk size
+            per packet.
+          description: Streams n random bytes generated with given seed, at given chunk
+            size per packet.
+          parameters:
+            - name: n
+              in: path
+              required: true
+          responses:
+            "200":
+              description: Bytes.
+          tags:
+            - Dynamic data
+      /stream/{n}:
+        get:
+          operationId: stream-n-get
+          summary: Stream n JSON responses
+          description: Stream n JSON responses
+          parameters:
+            - name: n
+              in: path
+              required: true
+          responses:
+            "200":
+              description: Streamed JSON responses.
+          tags:
+            - Dynamic data
+      /user-agent:
+        get:
+          operationId: user-agent-get
+          summary: Return the incoming requests's User-Agent header.
+          description: Return the incoming requests's User-Agent header.
+          responses:
+            "200":
+              description: The request's User-Agent header.
+          tags:
+            - Request inspection
+      /uuid:
+        get:
+          operationId: uuid-get
+          summary: Return a UUID4.
+          description: Return a UUID4.
+          responses:
+            "200":
+              description: A UUID4.
+          tags:
+            - Dynamic data
+      /xml:
+        get:
+          operationId: xml-get
+          summary: Returns a simple XML document.
+          description: Returns a simple XML document.
+          responses:
+            "200":
+              description: An XML document.
+          tags:
+            - Response formats
+    tags:
+      - description: Testing different HTTP verbs
+        name: HTTP Methods
+      - description: Auth methods
+        name: Auth
+      - description: Generates responses with given status code
+        name: Status codes
+      - description: Inspect the request data
+        name: Request inspection
+      - description: Inspect the response data like caching and headers
+        name: Response inspection
+      - description: Returns responses in different data formats
+        name: Response formats
+      - description: Generates random and dynamic data
+        name: Dynamic data
+      - description: Creates, reads and deletes Cookies
+        name: Cookies
+      - description: Returns different image formats
+        name: Images
+      - description: Returns different redirect responses
+        name: Redirects
+      - description: Returns anything that is passed to request
+        name: Anything
+  meta:
+    id: spc_f3e98716d2f8472b9d4e15faff0d60ea
+    created: 1762779827163
+    modified: 1762791237868
