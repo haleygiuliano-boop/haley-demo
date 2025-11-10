@@ -1,0 +1,197 @@
+type: collection.insomnia.rest/5.0
+name: AI Manager
+meta:
+  id: wrk_8be9f9aeacdc48eb80e3fec91f5de390
+  created: 1762782337045
+  modified: 1762782337045
+  description: ""
+collection:
+  - name: Calls
+    meta:
+      id: fld_8d1d442d902043c1a676fc6462c40b2d
+      created: 1745507337064
+      modified: 1762713522688
+      sortKey: -1745507786138
+      description: ""
+    children:
+      - url: "{{ _.aigwURL }}/aimodel"
+        name: AI Gateway - LB OpenAI and Gemini - Agent Alice
+        meta:
+          id: req_cd3bc9baaf2143e0bc355899ec80d900
+          created: 1745500332996
+          modified: 1762718279045
+          isPrivate: false
+          description: ""
+          sortKey: -1745507343728
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {    "messages": [
+                    {
+                        "role": "system",
+                        "content": "You are a developer"
+                    },
+                    {
+                        "role": "user",
+                        "content": "What is a Service Mesh used for? Be Brief"
+                    }
+                ]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        authentication:
+          type: basic
+          useISO88591: false
+          username: alice
+          password: alice789
+          disabled: true
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.aigwURL }}/ai-model"
+        name: AI Gateway - LB OpenAI and Gemini - Agent Bob
+        meta:
+          id: req_5365fd8bf96d468587157b2b13d0dd8e
+          created: 1745507946868
+          modified: 1762718787208
+          isPrivate: false
+          description: ""
+          sortKey: -1745506987969.8125
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {    "messages": [
+                    {
+                        "role": "system",
+                        "content": "You are a developer"
+                    },
+                    {
+                        "role": "user",
+                        "content": "What is Model Context Protocol? Be Brief"
+                    }
+                ]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: ""
+            value: ""
+        authentication:
+          type: basic
+          useISO88591: false
+          username: Bob
+          password: bob12345
+          disabled: true
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.aigwURL }}/aimodel"
+        name: AI Gateway - LB OpenAI and Gemini
+        meta:
+          id: req_a792085d062a4b6bb1d67c34f9049601
+          created: 1762714897154
+          modified: 1762718272313
+          isPrivate: false
+          description: ""
+          sortKey: -1745507343828
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {    "messages": [
+                    {
+                        "role": "system",
+                        "content": "You are a developer"
+                    },
+                    {
+                        "role": "user",
+                        "content": "What is a Service Mesh used for? Be Brief"
+                    }
+                ]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        authentication:
+          type: basic
+          useISO88591: false
+          username: alice
+          password: alice789
+          disabled: true
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.aigwURL }}/rate-limit"
+        name: AI Gateway - Rate-limit
+        meta:
+          id: req_7dbfb4cb050c420aa1be6be9811ceeaf
+          created: 1762718725640
+          modified: 1762718750892
+          isPrivate: false
+          description: ""
+          sortKey: -1745507343778
+        method: POST
+        body:
+          mimeType: application/json
+          text: |
+            {    "messages": [
+                    {
+                        "role": "system",
+                        "content": "You are a developer"
+                    },
+                    {
+                        "role": "user",
+                        "content": "What is a Service Mesh used for? Be Brief"
+                    }
+                ]
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+        authentication:
+          type: basic
+          useISO88591: false
+          username: alice
+          password: alice789
+          disabled: true
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_7234ed958cdf494f9a5ec7a2b64e2979
+    created: 1762713522703
+    modified: 1762713522703
+environments:
+  name: Base Environment
+  meta:
+    id: env_fe87164ed89241d28b9e5f6bbefacc95
+    created: 1745494039591
+    modified: 1762787101365
+    isPrivate: false
+  data:
+    aigwURL: https://c932a9d91b.us.serverless.gateways.konggateway.com
